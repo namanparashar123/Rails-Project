@@ -1,0 +1,2 @@
+class Violator < ApplicationRecord
+end
