@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ticket_number: 1
+  issue_date: MyString
+  violation: MyString
+  street: MyString
+  violator: one
+  lat: MyString
+  long: MyString
+
+two:
+  ticket_number: 1
+  issue_date: MyString
+  violation: MyString
+  street: MyString
+  violator: two
+  lat: MyString
+  long: MyString
