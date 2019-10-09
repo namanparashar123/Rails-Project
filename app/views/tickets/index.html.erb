@@ -18,6 +18,7 @@
             <td><%=tikt.issue_date%></td>
             <td><%=tikt.violation%></td>
             <td><%=tikt.street%></td>
+            <td><%=link_to "Link for more info", tickets_show_path(tikt)%></td>
         </tr>
         <%end%>
       </table>
