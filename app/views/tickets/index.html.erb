@@ -1,6 +1,7 @@
 <div class='container'>
 <h1>Tickets#index</h1>
 <p>Find me in app/views/tickets/index.html.erb</p>
+<%= paginate @Tickets_all, window: 2 %>
 <table class="table">
         <thead class="thead-dark">
         <tr>
@@ -8,6 +9,7 @@
             <th>Issue Date</th>
             <th>Violation</th>
             <th>Street</th>
+            <th></th>
         </tr>
         </thead>
         <% @Tickets_all.each do |tikt| %>
@@ -16,7 +18,6 @@
             <td><%=tikt.issue_date%></td>
             <td><%=tikt.violation%></td>
             <td><%=tikt.street%></td>
-            <td><%=link_to "Link for more info", ticket_path(tikt)%></td>
         </tr>
         <%end%>
       </table>
