@@ -1,6 +1,6 @@
 class TicketsController < ApplicationController
   def index
-    @Tickets_all = Ticket.order(:name).page params[:page]
+    @Tickets_all = (:name).page params[:page]
   end
 
   def show
