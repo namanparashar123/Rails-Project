@@ -1,5 +1,8 @@
 <div class='container'>
 <h1>About The Database</h1>
-<p>Tickets table is populated using the json data. Each Violator is created using the faker data. Violator can have many traffic tickets where as a ticket can only be assgned to one violator.</p>
+<p>Tickets table is populated using the json data. Each Violator is created using the faker data.
+Each violator is assigned some tickets in the seeds file which makes it a one to many relation.
+Each violator can have many tickets but a ticket can have only one violator as tickets are getting
+assigned using ticket number.</p>
 <%= image_tag("ERD.png", class:"img-fluid", alt:"ERD") %>
 </div>
