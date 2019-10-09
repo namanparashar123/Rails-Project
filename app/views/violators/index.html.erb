@@ -1,3 +1,23 @@
+<div class='container'>
 <h1>Violators#index</h1>
 <p>Find me in app/views/violators/index.html.erb</p>
-
+<table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th>Ticket Number</th>
+            <th>Issue Date</th>
+            <th>Violation</th>
+            <th>Street</th>
+        </tr>
+        </thead>
+        <% @Violators_all.each do |velli| %>
+        <tr>
+            <td><%=velli.ticket_number%></td>
+            <td><%=velli.issue_date%></td>
+            <td><%=velli.violation%></td>
+            <td><%=velli.street%></td>
+            <td><%=link_to "Link for more info", violator_path(velli)%></td>
+        </tr>
+        <%end%>
+      </table>
+</div>
