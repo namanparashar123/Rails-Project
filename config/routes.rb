@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'about/index'
   get 'violators/index'
   get 'violators/show'
   get 'tickets/index'
