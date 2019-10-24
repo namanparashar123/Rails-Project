@@ -8,7 +8,7 @@
             <th>Issue Date</th>
             <th>Violation</th>
             <th>Street</th>
-            <th></th>
+            <th>More info</th>
         </tr>
         </thead>
         <% @Tickets_all.each do |tikt| %>
@@ -17,7 +17,7 @@
             <td><%=tikt.issue_date%></td>
             <td><%=tikt.violation%></td>
             <td><%=tikt.street%></td>
-            <td><%=link_to "Link for more info", tickets_show_path(tikt)%></td>
+            <td><%=link_to "Click for more info", ticket_path(tikt)%></td>
         </tr>
         <%end%>
       </table>

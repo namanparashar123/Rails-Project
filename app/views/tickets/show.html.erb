@@ -1,3 +1,7 @@
 <h1>Tickets#show</h1>
 <p>Find me in app/views/tickets/show.html.erb</p>
 <p>Ticket Number <%=@Show_ticket.ticket_number%></p>
+
+<% map_url = "https://image.maps.api.here.com/mia/1.6/mapview?app_id=bL1d7bg8QUUxbBqhUe3s&app_code=I5yJwy4TZeC_-x7UvBgSnw&lat=#{@Show_ticket.lat}&lon=#{@Show_ticket.long}&vt=0&z=16&h=600&w=800"%>
+
+  <%= image_tag(map_url, alt: "violation location") %>
