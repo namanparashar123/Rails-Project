@@ -4,5 +4,6 @@ class ViolatorsController < ApplicationController
   end
 
   def show
+    @Show_violators = Violator.find(params[:id])
   end
 end

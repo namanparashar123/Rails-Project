@@ -1,2 +1,36 @@
-<h1>Search#results</h1>
-<p>Find me in app/views/search/results.html.erb</p>
+<div class="container">
+  <h1> Tickets found: <%= @ticket_count.size %></h1>
+  <% if @tickets.empty? %>
+    <p>Sorry, no tickets found.</p>
+  <% else %>
+    <div class="d-inline-block">
+      <%= paginate @tickets, window: 2 %>
+    </div>
+    <%= form_tag(results_search_index_path, method: "get", :class => 'd-inline-block') do %>
+      <%= label_tag(:q, "Search for Tickets:") %>
+      <%= text_field_tag(:q) %>
+      <%= submit_tag("Search") %>
+    <% end %>
+
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Ticket Number</th>
+          <th>Issue Date</th>
+          <th>Violation</th>
+          <th>Street</th>
+          <th>More info</th>
+        </tr>
+      </thead>
+      <% @tickets.each do |ticket| %>
+        <tr>
+          <td><%=ticket.ticket_number%></td>
+            <td><%=ticket.issue_date%></td>
+            <td><%=ticket.violation%></td>
+            <td><%=ticket.street%></td>
+            <td><%=link_to "Click for more info", ticket_path(ticket)%></td>
+        </tr>
+      <%end%>
+    </table>
+  <% end %>
+</div>

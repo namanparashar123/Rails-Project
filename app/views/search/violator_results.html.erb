@@ -1,2 +1,32 @@
-<h1>Search#violator_results</h1>
-<p>Find me in app/views/search/violator_results.html.erb</p>
+<div class="container">
+  <h1> Violators found: <%= @violators_count.size %></h1>
+  <% if @violators.empty? %>
+    <p>Sorry, no violators found.</p>
+  <% else %>
+    <div class="d-inline-block">
+      <%= paginate @violators, window: 2 %>
+    </div>
+    <%= form_tag(violator_results_search_index_path, method: "get", :class => 'd-inline-block') do %>
+      <%= label_tag(:q, "Search for Violators:") %>
+      <%= text_field_tag(:q) %>
+      <%= submit_tag("Search") %>
+    <% end %>
+
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Name</th>
+          <th>Ticket Number</th>
+          <th></th>
+        </tr>
+      </thead>
+      <% @violators.each do |violator| %>
+        <tr>
+          <td><%=violator.name%></td>
+            <td><%=violator.ticket_number%></td>
+            <td><%=link_to "Click for more info", violators_show_path(violator)%></td>
+        </tr>
+      <%end%>
+    </table>
+  <% end %>
+</div>

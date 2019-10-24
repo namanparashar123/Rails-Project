@@ -17,5 +17,17 @@ Rails.application.routes.draw do
   resources :violators do
     resources :tickets
   end
+
+  resources :search, only: [:index] do
+    collection do
+      get 'results'
+    end
+  end
+
+  resources :search, only: [:index] do
+    collection do
+      get 'violator_results'
+    end
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -1,6 +1,11 @@
 <div class='container'>
 <h1>Tickets Information</h1>
 <%= paginate @Tickets_all, window: 2 %>
+<%= form_tag(results_search_index_path, method: "get", :class => 'd-inline-block') do %>
+    <%= label_tag(:q, "Search for Ticket:") %>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag("Search") %>
+  <% end %>
 <table class="table">
         <thead class="thead-dark">
         <tr>
