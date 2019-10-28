@@ -7,19 +7,20 @@
     <%= submit_tag("Search") %>
   <% end %>
 <table class="table">
-        <thead class="thead-dark">
+    <thead class="thead-dark">
         <tr>
             <th>Name</th>
             <th>Ticket Number</th>
-            <th></th>
+            <th>More Info</th>
         </tr>
-        </thead>
-        <% @Violators_all.each do |velli| %>
+    </thead>
+    <% @Violators_all.each do |velli| %>
         <tr>
             <td><%=velli.name%></td>
             <td><%=velli.ticket_number%></td>
             <td><%=link_to "Click for more info", violator_path(velli)%></td>
         </tr>
-        <%end%>
-      </table>
+    <%end%>
+
+</table>
 </div>
