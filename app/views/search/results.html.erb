@@ -1,7 +1,7 @@
 <div class="container">
   <h1> Tickets found: <%= @ticket_count.size %></h1>
   <% if @tickets.empty? %>
-    <p>Sorry, no tickets found.</p>
+    <p style="font-weight: bold">Sorry, no tickets found.</p>
   <% else %>
     <div class="d-inline-block">
       <%= paginate @tickets, window: 2 %>
